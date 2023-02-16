@@ -32,7 +32,7 @@ enum RequestRouter: BaseRouter {
     var parameter: HttpParameters? {
         switch self {
         case .users:
-            return ["per_page": "1"]
+            return ["per_page": "20"]
         }
     }
 }

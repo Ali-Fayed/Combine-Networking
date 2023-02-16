@@ -14,6 +14,9 @@ public final class NetworkingManger {
     private let decoder = JSONDecoder()
     func performRequest<T: Codable>(router: BaseRouter, model: T.Type, shouldCache: Bool = true) -> AnyPublisher<T, APIError>{
         return Future { [unowned self] promise in
+            guard NetworkReachability.isConnectedToNetwork() else {
+                return promise(.failure(APIError(.noConnetion)))
+            }
             URLSession.shared.dataTaskPublisher(for: requestBuilder.buildRequest(router, shouldCache: shouldCache))
                .retry(1)
                .tryMap { dataElement -> Data in
@@ -21,7 +24,7 @@ public final class NetworkingManger {
                        let statusCode = httpResponse.statusCode
                        print("URL: [\(url)] , code: [\(statusCode)]")
                        guard statusCode < 500 else {
-                            throw APIError(message: "Server is unavailable")
+                           throw APIError(.serverError)
                        }
                        if 400..<500 ~= statusCode {
                             let error = try JSONDecoder().decode(APIError.self, from: dataElement.data)

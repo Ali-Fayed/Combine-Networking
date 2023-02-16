@@ -21,6 +21,9 @@
 		684578F4299D65390097A7E3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578F3299D65390097A7E3 /* Model.swift */; };
 		684578F8299D9DC40097A7E3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578F7299D9DC40097A7E3 /* ViewModel.swift */; };
 		684578FC299DBE5D0097A7E3 /* NetworkingManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578FB299DBE5D0097A7E3 /* NetworkingManger.swift */; };
+		684578FE299E4F500097A7E3 /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578FD299E4F500097A7E3 /* NetworkReachability.swift */; };
+		68457902299E532A0097A7E3 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68457901299E532A0097A7E3 /* ErrorCode.swift */; };
+		68457905299E55FA0097A7E3 /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 68457904299E55FA0097A7E3 /* CombineCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,8 @@
 		684578F3299D65390097A7E3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		684578F7299D9DC40097A7E3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		684578FB299DBE5D0097A7E3 /* NetworkingManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManger.swift; sourceTree = "<group>"; };
+		684578FD299E4F500097A7E3 /* NetworkReachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		68457901299E532A0097A7E3 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68457905299E55FA0097A7E3 /* CombineCocoa in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,6 +102,7 @@
 		684578E0299D63550097A7E3 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				684578FD299E4F500097A7E3 /* NetworkReachability.swift */,
 				684578E3299D63550097A7E3 /* BaseRouter.swift */,
 				684578E1299D63550097A7E3 /* RouterTypes.swift */,
 				684578E2299D63550097A7E3 /* RequestBuilder.swift */,
@@ -107,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				684578E7299D63550097A7E3 /* ErrorModel.swift */,
+				68457901299E532A0097A7E3 /* ErrorCode.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -171,6 +179,9 @@
 			dependencies = (
 			);
 			name = "Combine Networking";
+			packageProductDependencies = (
+				68457904299E55FA0097A7E3 /* CombineCocoa */,
+			);
 			productName = "Combine Native Networking Layer";
 			productReference = 684578C8299D632A0097A7E3 /* Combine Networking.app */;
 			productType = "com.apple.product-type.application";
@@ -199,6 +210,9 @@
 				Base,
 			);
 			mainGroup = 684578BF299D632A0097A7E3;
+			packageReferences = (
+				68457903299E55FA0097A7E3 /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+			);
 			productRefGroup = 684578C9299D632A0097A7E3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -226,8 +240,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68457902299E532A0097A7E3 /* ErrorCode.swift in Sources */,
 				684578E9299D63550097A7E3 /* RequestBuilder.swift in Sources */,
 				684578EA299D63550097A7E3 /* BaseRouter.swift in Sources */,
+				684578FE299E4F500097A7E3 /* NetworkReachability.swift in Sources */,
 				684578EB299D63550097A7E3 /* RequestRouter.swift in Sources */,
 				684578F8299D9DC40097A7E3 /* ViewModel.swift in Sources */,
 				684578D0299D632A0097A7E3 /* ViewController.swift in Sources */,
@@ -456,6 +472,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		68457903299E55FA0097A7E3 /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		68457904299E55FA0097A7E3 /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 68457903299E55FA0097A7E3 /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 684578C0299D632A0097A7E3 /* Project object */;
 }

@@ -8,17 +8,23 @@ import Foundation
 import Combine
 class ViewModel {
     private var subscribtions = Set< AnyCancellable > ()
-    func fetch() {
+    let usersPublisher = PassthroughSubject<[User], APIError>()
+    init() {
+        fetchData()
+    }
+    func fetchData() {
         let request =  NetworkingManger.shared.performRequest(router: RequestRouter.users, model: [User].self, shouldCache: false)
         request.sink { completion in
             switch completion {
             case .failure(let error):
-                print(error.message)
+                self.usersPublisher.send(completion: .failure(error))
             case .finished:
                 break
             }
-        } receiveValue: { value in
-            print(value)
+        } receiveValue: { users in
+            DispatchQueue.main.async {
+                self.usersPublisher.send(users)
+            }
         }.store(in: &subscribtions)
     }
 }
