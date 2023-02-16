@@ -17,10 +17,10 @@
 		684578E9299D63550097A7E3 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E2299D63550097A7E3 /* RequestBuilder.swift */; };
 		684578EA299D63550097A7E3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E3299D63550097A7E3 /* BaseRouter.swift */; };
 		684578EB299D63550097A7E3 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E4299D63550097A7E3 /* RequestRouter.swift */; };
-		684578EC299D63550097A7E3 /* NetworkingManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E5299D63550097A7E3 /* NetworkingManger.swift */; };
 		684578ED299D63550097A7E3 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E7299D63550097A7E3 /* ErrorModel.swift */; };
 		684578F4299D65390097A7E3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578F3299D65390097A7E3 /* Model.swift */; };
 		684578F8299D9DC40097A7E3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578F7299D9DC40097A7E3 /* ViewModel.swift */; };
+		684578FC299DBE5D0097A7E3 /* NetworkingManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578FB299DBE5D0097A7E3 /* NetworkingManger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,10 +36,10 @@
 		684578E2299D63550097A7E3 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
 		684578E3299D63550097A7E3 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
 		684578E4299D63550097A7E3 /* RequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
-		684578E5299D63550097A7E3 /* NetworkingManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManger.swift; sourceTree = "<group>"; };
 		684578E7299D63550097A7E3 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
 		684578F3299D65390097A7E3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		684578F7299D9DC40097A7E3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		684578FB299DBE5D0097A7E3 /* NetworkingManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +85,7 @@
 		684578DF299D63550097A7E3 /* NetworkingLayer */ = {
 			isa = PBXGroup;
 			children = (
-				684578E5299D63550097A7E3 /* NetworkingManger.swift */,
+				684578FB299DBE5D0097A7E3 /* NetworkingManger.swift */,
 				684578E4299D63550097A7E3 /* RequestRouter.swift */,
 				684578E0299D63550097A7E3 /* Others */,
 				684578E6299D63550097A7E3 /* Error */,
@@ -230,9 +230,9 @@
 				684578EA299D63550097A7E3 /* BaseRouter.swift in Sources */,
 				684578EB299D63550097A7E3 /* RequestRouter.swift in Sources */,
 				684578F8299D9DC40097A7E3 /* ViewModel.swift in Sources */,
-				684578EC299D63550097A7E3 /* NetworkingManger.swift in Sources */,
 				684578D0299D632A0097A7E3 /* ViewController.swift in Sources */,
 				684578CC299D632A0097A7E3 /* AppDelegate.swift in Sources */,
+				684578FC299DBE5D0097A7E3 /* NetworkingManger.swift in Sources */,
 				684578ED299D63550097A7E3 /* ErrorModel.swift in Sources */,
 				684578E8299D63550097A7E3 /* RouterTypes.swift in Sources */,
 				684578F4299D65390097A7E3 /* Model.swift in Sources */,

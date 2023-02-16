@@ -1,10 +1,9 @@
 //
-//  SessionManager.swift
-//  MVVM-Clean
+//  NetworkingManger.swift
+//  Combine Networking
 //
-//  Created by Ahmed Fathy on 10/01/2023.
+//  Created by Ali Fayed on 15/02/2023.
 //
-
 import Foundation
 import Combine
 public final class NetworkingManger {

@@ -1,6 +1,6 @@
 //
 //  Router.swift
-//  MVVM-Clean
+//  Combine Networking
 //
 //  Created by Ali Fayed on 15/02/2023.
 //
@@ -32,7 +32,7 @@ enum RequestRouter: BaseRouter {
     var parameter: HttpParameters? {
         switch self {
         case .users:
-            return ["per_page": "10"]
+            return ["per_page": "1"]
         }
     }
 }
