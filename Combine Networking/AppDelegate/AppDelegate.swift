@@ -1,8 +1,8 @@
 //
 //  AppDelegate.swift
-//  Combine Native Networking Layer
+//  Combine Networking
 //
-//  Created by Ali Fixed on 15/02/2023.
+//  Created by Ali Fayed on 15/02/2023.
 //
 
 import UIKit

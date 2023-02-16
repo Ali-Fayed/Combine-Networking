@@ -1,19 +1,14 @@
 //
 //  ViewController.swift
-//  Combine Native Networking Layer
+//  Combine Networking
 //
-//  Created by Ali Fixed on 15/02/2023.
+//  Created by Ali Fayed on 15/02/2023.
 //
-
 import UIKit
-
 class ViewController: UIViewController {
-
+    private var viewModel = ViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewModel.fetch()
     }
-
-
 }
-

@@ -13,10 +13,18 @@
 		684578D3299D632A0097A7E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684578D1299D632A0097A7E3 /* Main.storyboard */; };
 		684578D5299D632C0097A7E3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684578D4299D632C0097A7E3 /* Assets.xcassets */; };
 		684578D8299D632C0097A7E3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684578D6299D632C0097A7E3 /* LaunchScreen.storyboard */; };
+		684578E8299D63550097A7E3 /* RouterTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E1299D63550097A7E3 /* RouterTypes.swift */; };
+		684578E9299D63550097A7E3 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E2299D63550097A7E3 /* RequestBuilder.swift */; };
+		684578EA299D63550097A7E3 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E3299D63550097A7E3 /* BaseRouter.swift */; };
+		684578EB299D63550097A7E3 /* RequestRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E4299D63550097A7E3 /* RequestRouter.swift */; };
+		684578EC299D63550097A7E3 /* NetworkingManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E5299D63550097A7E3 /* NetworkingManger.swift */; };
+		684578ED299D63550097A7E3 /* ErrorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578E7299D63550097A7E3 /* ErrorModel.swift */; };
+		684578F4299D65390097A7E3 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578F3299D65390097A7E3 /* Model.swift */; };
+		684578F8299D9DC40097A7E3 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684578F7299D9DC40097A7E3 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		684578C8299D632A0097A7E3 /* Combine Native Networking Layer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combine Native Networking Layer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		684578C8299D632A0097A7E3 /* Combine Networking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Combine Networking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		684578CB299D632A0097A7E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		684578CD299D632A0097A7E3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		684578CF299D632A0097A7E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +32,14 @@
 		684578D4299D632C0097A7E3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		684578D7299D632C0097A7E3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		684578D9299D632C0097A7E3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		684578E1299D63550097A7E3 /* RouterTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterTypes.swift; sourceTree = "<group>"; };
+		684578E2299D63550097A7E3 /* RequestBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		684578E3299D63550097A7E3 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		684578E4299D63550097A7E3 /* RequestRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestRouter.swift; sourceTree = "<group>"; };
+		684578E5299D63550097A7E3 /* NetworkingManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManger.swift; sourceTree = "<group>"; };
+		684578E7299D63550097A7E3 /* ErrorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorModel.swift; sourceTree = "<group>"; };
+		684578F3299D65390097A7E3 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		684578F7299D9DC40097A7E3 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +56,7 @@
 		684578BF299D632A0097A7E3 = {
 			isa = PBXGroup;
 			children = (
-				684578CA299D632A0097A7E3 /* Combine Native Networking Layer */,
+				684578CA299D632A0097A7E3 /* Combine Networking */,
 				684578C9299D632A0097A7E3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,31 +64,103 @@
 		684578C9299D632A0097A7E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				684578C8299D632A0097A7E3 /* Combine Native Networking Layer.app */,
+				684578C8299D632A0097A7E3 /* Combine Networking.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		684578CA299D632A0097A7E3 /* Combine Native Networking Layer */ = {
+		684578CA299D632A0097A7E3 /* Combine Networking */ = {
+			isa = PBXGroup;
+			children = (
+				684578DF299D63550097A7E3 /* NetworkingLayer */,
+				684578EE299D636E0097A7E3 /* AppDelegate */,
+				684578F2299D63960097A7E3 /* Scenes */,
+				684578F0299D637F0097A7E3 /* Storyboard */,
+				684578F1299D638B0097A7E3 /* Assets */,
+				684578D9299D632C0097A7E3 /* Info.plist */,
+			);
+			path = "Combine Networking";
+			sourceTree = "<group>";
+		};
+		684578DF299D63550097A7E3 /* NetworkingLayer */ = {
+			isa = PBXGroup;
+			children = (
+				684578E5299D63550097A7E3 /* NetworkingManger.swift */,
+				684578E4299D63550097A7E3 /* RequestRouter.swift */,
+				684578E0299D63550097A7E3 /* Others */,
+				684578E6299D63550097A7E3 /* Error */,
+			);
+			path = NetworkingLayer;
+			sourceTree = "<group>";
+		};
+		684578E0299D63550097A7E3 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				684578E3299D63550097A7E3 /* BaseRouter.swift */,
+				684578E1299D63550097A7E3 /* RouterTypes.swift */,
+				684578E2299D63550097A7E3 /* RequestBuilder.swift */,
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		684578E6299D63550097A7E3 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				684578E7299D63550097A7E3 /* ErrorModel.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		684578EE299D636E0097A7E3 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				684578CB299D632A0097A7E3 /* AppDelegate.swift */,
 				684578CD299D632A0097A7E3 /* SceneDelegate.swift */,
-				684578CF299D632A0097A7E3 /* ViewController.swift */,
-				684578D1299D632A0097A7E3 /* Main.storyboard */,
-				684578D4299D632C0097A7E3 /* Assets.xcassets */,
-				684578D6299D632C0097A7E3 /* LaunchScreen.storyboard */,
-				684578D9299D632C0097A7E3 /* Info.plist */,
 			);
-			path = "Combine Native Networking Layer";
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		684578EF299D63750097A7E3 /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				684578F3299D65390097A7E3 /* Model.swift */,
+				684578F7299D9DC40097A7E3 /* ViewModel.swift */,
+				684578CF299D632A0097A7E3 /* ViewController.swift */,
+			);
+			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		684578F0299D637F0097A7E3 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				684578D1299D632A0097A7E3 /* Main.storyboard */,
+				684578D6299D632C0097A7E3 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		684578F1299D638B0097A7E3 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				684578D4299D632C0097A7E3 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		684578F2299D63960097A7E3 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				684578EF299D63750097A7E3 /* HomeScene */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		684578C7299D632A0097A7E3 /* Combine Native Networking Layer */ = {
+		684578C7299D632A0097A7E3 /* Combine Networking */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 684578DC299D632C0097A7E3 /* Build configuration list for PBXNativeTarget "Combine Native Networking Layer" */;
+			buildConfigurationList = 684578DC299D632C0097A7E3 /* Build configuration list for PBXNativeTarget "Combine Networking" */;
 			buildPhases = (
 				684578C4299D632A0097A7E3 /* Sources */,
 				684578C5299D632A0097A7E3 /* Frameworks */,
@@ -82,9 +170,9 @@
 			);
 			dependencies = (
 			);
-			name = "Combine Native Networking Layer";
+			name = "Combine Networking";
 			productName = "Combine Native Networking Layer";
-			productReference = 684578C8299D632A0097A7E3 /* Combine Native Networking Layer.app */;
+			productReference = 684578C8299D632A0097A7E3 /* Combine Networking.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 684578C3299D632A0097A7E3 /* Build configuration list for PBXProject "Combine Native Networking Layer" */;
+			buildConfigurationList = 684578C3299D632A0097A7E3 /* Build configuration list for PBXProject "Combine Networking" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +203,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				684578C7299D632A0097A7E3 /* Combine Native Networking Layer */,
+				684578C7299D632A0097A7E3 /* Combine Networking */,
 			);
 		};
 /* End PBXProject section */
@@ -138,8 +226,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				684578E9299D63550097A7E3 /* RequestBuilder.swift in Sources */,
+				684578EA299D63550097A7E3 /* BaseRouter.swift in Sources */,
+				684578EB299D63550097A7E3 /* RequestRouter.swift in Sources */,
+				684578F8299D9DC40097A7E3 /* ViewModel.swift in Sources */,
+				684578EC299D63550097A7E3 /* NetworkingManger.swift in Sources */,
 				684578D0299D632A0097A7E3 /* ViewController.swift in Sources */,
 				684578CC299D632A0097A7E3 /* AppDelegate.swift in Sources */,
+				684578ED299D63550097A7E3 /* ErrorModel.swift in Sources */,
+				684578E8299D63550097A7E3 /* RouterTypes.swift in Sources */,
+				684578F4299D65390097A7E3 /* Model.swift in Sources */,
 				684578CE299D632A0097A7E3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,18 +385,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H368HQSP2D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Combine Native Networking Layer/Info.plist";
+				INFOPLIST_FILE = "Combine Networking/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Combine-Native-Networking-Layer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.combine-networking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,18 +414,19 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H368HQSP2D;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Combine Native Networking Layer/Info.plist";
+				INFOPLIST_FILE = "Combine Networking/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Combine-Native-Networking-Layer";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.combine-networking";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -339,7 +437,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		684578C3299D632A0097A7E3 /* Build configuration list for PBXProject "Combine Native Networking Layer" */ = {
+		684578C3299D632A0097A7E3 /* Build configuration list for PBXProject "Combine Networking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				684578DA299D632C0097A7E3 /* Debug */,
@@ -348,7 +446,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		684578DC299D632C0097A7E3 /* Build configuration list for PBXNativeTarget "Combine Native Networking Layer" */ = {
+		684578DC299D632C0097A7E3 /* Build configuration list for PBXNativeTarget "Combine Networking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				684578DD299D632C0097A7E3 /* Debug */,
