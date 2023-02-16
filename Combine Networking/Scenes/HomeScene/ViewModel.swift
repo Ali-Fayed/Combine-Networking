@@ -13,7 +13,7 @@ class ViewModel {
         request.sink { completion in
             switch completion {
             case .failure(let error):
-                print(error.localizedDescription)
+                print(error.message)
             case .finished:
                 break
             }

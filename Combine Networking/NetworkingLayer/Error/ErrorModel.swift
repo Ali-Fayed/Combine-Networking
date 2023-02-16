@@ -7,6 +7,5 @@
 
 import Foundation
 struct APIError: Error, Codable {
-    let code: Int
     let message: String
 }

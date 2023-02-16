@@ -13,26 +13,28 @@ public final class NetworkingManger {
     private var requestBuilder = RequestBuilder.shared
     private var subscribtions = Set<AnyCancellable>()
     private let decoder = JSONDecoder()
-    func performRequest<T: Codable>(router: BaseRouter, model: T.Type, shouldCache: Bool = true) -> AnyPublisher<T, Error>{
+    func performRequest<T: Codable>(router: BaseRouter, model: T.Type, shouldCache: Bool = true) -> AnyPublisher<T, APIError>{
         return Future { [unowned self] promise in
             URLSession.shared.dataTaskPublisher(for: requestBuilder.buildRequest(router, shouldCache: shouldCache))
                .retry(1)
                .tryMap { dataElement -> Data in
-                   guard let httpResponse = dataElement.response as? HTTPURLResponse,
-                       (200...299).contains(httpResponse.statusCode) else {
-                       throw URLError(.badServerResponse)
+                   if let httpResponse = dataElement.response as? HTTPURLResponse, let url = httpResponse.url {
+                       let statusCode = httpResponse.statusCode
+                       print("URL: [\(url)] , code: [\(statusCode)]")
+                       guard statusCode < 500 else {
+                            throw APIError(message: "Server is unavailable")
+                       }
+                       if 400..<500 ~= statusCode {
+                            let error = try JSONDecoder().decode(APIError.self, from: dataElement.data)
+                            throw error
+                       }
+                       guard (200...299).contains(statusCode) else {
+                           throw URLError(.badServerResponse)
+                       }
                    }
-                   print("URL: \(String(describing: httpResponse.url)), code: \(httpResponse.statusCode)")
                    return dataElement.data
                }
                .decode(type: model.self, decoder: decoder)
-               .mapError { error -> APIError in
-                   if let urlError = error as? URLError {
-                       return APIError(code: urlError.errorCode, message: urlError.localizedDescription)
-                   } else {
-                       return APIError(code: 0, message: "Unknown error occurred")
-                   }
-               }
                .receive(on: RunLoop.main)
                .sink { finished in
                    print(finished)
@@ -41,5 +43,4 @@ public final class NetworkingManger {
                }.store(in: &subscribtions)
         }.eraseToAnyPublisher()
     }
-    
 }
