@@ -12,6 +12,12 @@ public final class NetworkingManger {
     private var requestBuilder = RequestBuilder.shared
     private var subscribtions = Set<AnyCancellable>()
     private let decoder = JSONDecoder()
+    /// Network Layer description
+    /// - Parameters:
+    ///   - router: paramater give the request the main URLRequest components.
+    ///   - model: the model will return.
+    ///   - shouldCache: a bool to check if we want to cache the reponse or not
+    /// - Returns: a Publisher contatins model and error.
     func performRequest<T: Codable>(router: BaseRouter, model: T.Type, shouldCache: Bool = true) -> AnyPublisher<T, APIError>{
         return Future { [unowned self] promise in
             guard NetworkReachability.isConnectedToNetwork() else {
@@ -26,7 +32,7 @@ public final class NetworkingManger {
                        guard statusCode < 500 else {
                            throw APIError(.serverError)
                        }
-                       if 400..<500 ~= statusCode {
+                       if 400..<499 ~= statusCode {
                             let error = try JSONDecoder().decode(APIError.self, from: dataElement.data)
                             throw error
                        }
@@ -39,7 +45,12 @@ public final class NetworkingManger {
                .decode(type: model.self, decoder: decoder)
                .receive(on: RunLoop.main)
                .sink { finished in
-                   print(finished)
+                   switch finished {
+                   case .failure:
+                       promise(.failure(APIError(.decodingError)))
+                   case .finished:
+                       break
+                   }
                } receiveValue: { data in
                    promise(.success(data))
                }.store(in: &subscribtions)
