@@ -4,44 +4,42 @@
 //
 //  Created by Ali Fayed on 15/02/2023.
 //
-
 import Foundation
-class RequestBuilder {
-     private init() {}
-     static let shared = RequestBuilder()
-     func buildRequest(_ router: BaseRouter, shouldCache: Bool) -> URLRequest {
-         var component: URLComponents = URLComponents()
-         component.host = router.baseURL
-         component.scheme = router.scheme
-         component.path = router.path
-         if let parameter = router.parameter {
-             parameter.forEach {
-                 if component.queryItems == nil {
-                     component.queryItems = []
-                 }
-                 component.queryItems?.append(URLQueryItem(name: $0.key, value: $0.value))
-             }
-         }
-         var urlRequest = URLRequest(url: component.url!, cachePolicy: shouldCache ? .useProtocolCachePolicy : .reloadIgnoringLocalCacheData)
-         urlRequest.httpMethod = router.method.rawValue
-         if router.method == .post {
-             confiqureBody(body: router.parameter, request: &urlRequest)
-         }
-         configureHeaders(headers: router.headers, request: &urlRequest)
-         return urlRequest
-    }
-     private func confiqureBody(body: [String: Any]?, request: inout URLRequest) {
-        guard let bodyDic = body else {
-            return
+extension BaseRouter {
+    func asURLRequest(shouldCache: Bool) -> URLRequest {
+        var component: URLComponents = URLComponents()
+        component.scheme = self.scheme
+        component.host = self.baseURL
+        component.path = self.path
+        if let parameter = self.parameter {
+            parameter.forEach {
+                if component.queryItems == nil {
+                    component.queryItems = []
+                }
+                component.queryItems?.append(URLQueryItem(name: $0.key, value: $0.value))
+            }
         }
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: bodyDic, options: []) else {
-            return
+        let url = component.url!
+        var urlRequest = URLRequest(url: url, cachePolicy: shouldCache ? .useProtocolCachePolicy : .reloadIgnoringLocalCacheData)
+        urlRequest.httpMethod = self.method.rawValue
+        if self.method == .post {
+            confiqureBody(body: self.parameter, request: &urlRequest)
         }
-        request.httpBody = httpBody
-    }
-    private func configureHeaders(headers: [String: String]?, request: inout URLRequest) {
-        headers?.forEach {
-            request.setValue($0.value, forHTTPHeaderField: $0.key)
-        }
-    }
+        configureHeaders(headers: self.headers, request: &urlRequest)
+        return urlRequest
+   }
+    func confiqureBody(body: [String: Any]?, request: inout URLRequest) {
+       guard let bodyDic = body else {
+           return
+       }
+       guard let httpBody = try? JSONSerialization.data(withJSONObject: bodyDic, options: []) else {
+           return
+       }
+       request.httpBody = httpBody
+   }
+   func configureHeaders(headers: [String: String]?, request: inout URLRequest) {
+       headers?.forEach {
+           request.setValue($0.value, forHTTPHeaderField: $0.key)
+       }
+   }
 }

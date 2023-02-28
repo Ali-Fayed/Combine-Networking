@@ -9,7 +9,6 @@ import Combine
 public final class NetworkingManger {
     private init() {}
     public static var shared = NetworkingManger()
-    private var requestBuilder = RequestBuilder.shared
     private var subscribtions = Set<AnyCancellable>()
     private let decoder = JSONDecoder()
     /// Network Layer description
@@ -23,7 +22,8 @@ public final class NetworkingManger {
             guard NetworkReachability.isConnectedToNetwork() else {
                 return promise(.failure(APIError(.noConnetion)))
             }
-            URLSession.shared.dataTaskPublisher(for: requestBuilder.buildRequest(router, shouldCache: shouldCache))
+            let requestRouter = router.asURLRequest(shouldCache: shouldCache)
+            URLSession.shared.dataTaskPublisher(for: requestRouter)
                .retry(1)
                .tryMap { dataElement -> Data in
                    if let httpResponse = dataElement.response as? HTTPURLResponse, let url = httpResponse.url {
